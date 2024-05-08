@@ -8,8 +8,8 @@ module.exports = withSentryConfig(
             SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT ?? 'development',
             GITBOOK_ASSETS_PREFIX: process.env.GITBOOK_ASSETS_PREFIX,
         },
-        experiments: {
-            asyncWebAssembly: true,
+        experimental: {
+            syncWebAssembly: true,
         },
 
         webpack(config) {
