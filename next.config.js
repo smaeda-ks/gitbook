@@ -8,10 +8,6 @@ module.exports = withSentryConfig(
             SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT ?? 'development',
             GITBOOK_ASSETS_PREFIX: process.env.GITBOOK_ASSETS_PREFIX,
         },
-        experimental: {
-            syncWebAssembly: true,
-        },
-
         webpack(config) {
             config.resolve.fallback = {
                 ...config.resolve.fallback,
@@ -20,6 +16,10 @@ module.exports = withSentryConfig(
                 fs: false,
                 path: false,
                 http: false,
+            };
+
+            config.experiments = {
+                asyncWebAssembly: true,
             };
 
             return config;
