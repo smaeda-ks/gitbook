@@ -20,6 +20,7 @@ module.exports = withSentryConfig(
 
             config.experiments = {
                 asyncWebAssembly: true,
+                layers: true,
             };
 
             return config;
