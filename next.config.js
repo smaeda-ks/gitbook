@@ -8,6 +8,9 @@ module.exports = withSentryConfig(
             SENTRY_ENVIRONMENT: process.env.SENTRY_ENVIRONMENT ?? 'development',
             GITBOOK_ASSETS_PREFIX: process.env.GITBOOK_ASSETS_PREFIX,
         },
+        experimental: {
+            asyncWebAssembly: true,
+        },
 
         webpack(config) {
             config.resolve.fallback = {
